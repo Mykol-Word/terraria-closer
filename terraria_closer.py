@@ -17,7 +17,8 @@ def check_for_close_tag(close_tag, arm_time):
         print("Get request failed. The response was '" + request.text + ".' This is likely due to invalid keys in 'keys.json'")
         exit(1)
     for message in request_json:
-        if(close_tag in message['content']): #ideally add timestamp comparison here
+        message_time = datetime.fromisoformat(message['timestamp'])
+        if(close_tag in message['content'] and message_time > arm_time):
             print("FOUND")
             return True
         
@@ -45,7 +46,8 @@ armed = input("Type 'ARM' to arm the server closer:")
 while armed != "ARM":
     armed = input("Invalid input. Type 'ARM' to arm the server closer:")
 
-arm_time = datetime.now() #Unused as of now
+arm_time = datetime.now(datetime.now().astimezone().tzinfo)
+arm_time = arm_time.astimezone(timezone.utc)
 
 print("Your close tag is '" + close_tag + "'")
 print("Press 'q' to unarm the server closer")
