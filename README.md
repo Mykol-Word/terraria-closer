@@ -6,30 +6,32 @@ Terraria Closer runs an automated mouse click/move sequence upon a user-specifie
 
 After downloading and unzipping the project, set the "terraria-closer" project folder as your working directory and run:
 
-*Mac:*
+*Unix/Mac:*
 `python3 -m venv .venv`
 
-*Windows*
-```
-py -m venv .venv
-```
+*Windows:*
+`py -m venv .venv`
 
 Then you must activate your virtual environment with:
 
-*Mac*
-```
-.venv/bin/python
-```
+*Unix/Mac:*
+`.venv/bin/python`
 
-*Windows*
-```
-.venv\Scripts\activate
-```
+*Windows:*
+`.venv\Scripts\activate`
 
 ## Installing requirements
 
 Once your virtual environment is set up, download the project requirements with:
 
-```
-pip install -r requirements.txt
-```
+`pip install -r requirements.txt`
+
+## Running Terraria Closer
+
+To run the project, use:
+
+*Unix/Mac:*
+`python3 terraria_closer.py`
+
+*Windows:*
+`py terraria_closer.py`
