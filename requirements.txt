@@ -1,0 +1,6 @@
+# Non-standard dependencies
+
+requests==2.32.3
+datetime==5.5
+keyboard==0.13.5
+pydirectinput==1.0.4
